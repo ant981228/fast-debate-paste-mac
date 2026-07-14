@@ -1,0 +1,137 @@
+==========================================================
+ Fast Debate Paste — How to Run It (macOS)
+==========================================================
+
+This is a little menu-bar app that copies evidence from one app
+(usually your browser), cleans it up, and pastes it into a
+target window (like your CardMirror speech doc) — all with global
+keyboard shortcuts.
+
+It lives in the menu bar (top-right of your screen), not the Dock.
+
+----------------------------------------------------------
+ BEFORE YOU START — two requirements
+----------------------------------------------------------
+
+1. You need an Apple Silicon Mac (M1, M2, M3, or M4).
+   It will NOT run on older Intel Macs.
+
+2. You'll grant it "Accessibility" permission once (instructions
+   below). That's what lets it press Copy/Paste for you. It's a
+   normal requirement for this kind of tool.
+
+
+----------------------------------------------------------
+ STEP 1 — Install it (the easy way: one line, no warnings)
+----------------------------------------------------------
+
+1. Open the Terminal app (press Cmd+Space, type "Terminal", Return).
+2. Paste this one line and press Return:
+
+   curl -fsSL https://raw.githubusercontent.com/ant981228/fast-debate-paste-mac/main/install.sh | bash
+
+That's the whole install: it downloads the latest version, puts it in
+Applications, and opens it. No security warnings appear — apps
+downloaded this way skip the macOS "unidentified developer" block
+entirely. Skip to STEP 3.
+
+UPDATING LATER: run the same line again. Done — no prompts, and you
+will NOT have to re-grant Accessibility.
+
+----------------------------------------------------------
+ STEP 2 — Install it (manual way, if you were sent a zip)
+----------------------------------------------------------
+
+1. Unzip the file. You'll get a folder with the app, an installer,
+   and this text file.
+2. Double-click  "Install Fast Debate Paste.command".
+3. If macOS blocks it ("cannot be opened"):
+   • On macOS 15 (Sequoia) or newer: open System Settings →
+     Privacy & Security, scroll down to the message about the
+     blocked file, click "Open Anyway", then try again.
+   • On macOS 14 or older: RIGHT-CLICK (Control-click) the
+     installer, choose "Open", then click "Open" in the box.
+   (Either way, you only do this once.)
+
+The installer copies the app to Applications, clears the macOS flag
+that would otherwise make copying silently fail, and opens it.
+
+----------------------------------------------------------
+ STEP 3 — Grant Accessibility permission
+----------------------------------------------------------
+
+When you first open the app, macOS should pop up a box asking about
+Accessibility. Click "Open System Settings" and turn ON
+"Fast Debate Paste".
+
+If no box appears, do it manually:
+  • Apple menu -> System Settings -> Privacy & Security ->
+    Accessibility.
+  • Find "Fast Debate Paste" in the list and switch it ON.
+    (If it isn't listed, click the "+" button, then add it from
+    your Applications folder.)
+
+The moment you turn it on, the app will briefly restart itself (this
+is required for the permission to fully take effect — just click OK
+if it asks). That's normal.
+
+You'll know it worked: click the clipboard icon in the menu bar and
+the "Accessibility:" line near the bottom should say "granted".
+
+
+----------------------------------------------------------
+ STEP 4 — Use it
+----------------------------------------------------------
+
+First, tell it where to paste:
+
+  • Press  Control + Shift + W  and pick your target window
+    (e.g. your CardMirror doc). It remembers your choice.
+
+Then the shortcuts:
+
+  Control + Shift + W   Pick the target window (paste destination)
+  Control + Shift + C   Copy selected text -> paste into target
+  Control + Shift + V   Same, but removes line breaks
+  Control + Shift + B   Same, no line breaks, no new line first
+  Control + Shift + H   Show the built-in help
+
+Typical flow: select text in your browser, press Control+Shift+C,
+and it lands in your target doc.
+
+
+----------------------------------------------------------
+ OPTIONAL — change shortcuts or settings
+----------------------------------------------------------
+
+Click the menu-bar icon -> "Edit Config..." to open the settings
+file, make changes, then click "Reload Config". (Mostly you'd only
+change the hotkeys, if they collide with something on your machine.)
+
+To have it start automatically every time you log in, click the
+menu-bar icon and choose "Launch at Login" (a checkmark means it's
+on). Click it again to turn it off.
+
+
+----------------------------------------------------------
+ TROUBLESHOOTING
+----------------------------------------------------------
+
+• "Failed to copy" — two things to check, in order:
+  (1) Make sure you actually have text selected in the app you're
+      copying from before pressing the shortcut.
+  (2) Make sure the menu-bar "Accessibility:" line says "granted".
+      If it says granted but copy still fails, you likely opened the
+      app without clearing quarantine — redo STEP 1 (the installer),
+      or run the STEP 2 Terminal command, then reopen the app.
+
+• A shortcut does nothing — another app may already use that key
+  combo. Change it via "Edit Config..." then "Reload Config".
+
+• Nothing in the menu bar — open it again from Applications. It has
+  no Dock icon by design; look for the clipboard icon up top.
+
+• To quit it: click the clipboard icon -> "Quit Fast Debate Paste".
+
+----------------------------------------------------------
+That's it. Enjoy!

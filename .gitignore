@@ -1,0 +1,14 @@
+# Build outputs
+.build/
+dist/
+share/
+
+# The Windows AutoHotkey original — kept locally for reference, but its
+# authorship/license is unverified, so it stays out of the public repo.
+*.ahk
+
+# macOS noise
+.DS_Store
+
+# Exported signing material must never be committed
+*.p12
