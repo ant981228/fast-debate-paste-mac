@@ -7,9 +7,11 @@ to a target window (your
 [CardMirror](https://github.com/ant981228/cardmirror) speech doc) and
 pastes — all from global hotkeys.
 
-It lives in the menu bar only (no Dock icon) and drives everything with
-synthesized keystrokes + the clipboard, so it needs **no changes to
-CardMirror** and works with any editor.
+It lives in the menu bar only (no Dock icon). Copying from the source app
+is synthesized keystrokes + the clipboard; delivery into CardMirror goes
+through its native integration bridge when it's running, with a fixed
+Return + F2 keystroke fallback (CardMirror's "Paste Plain Text") when
+it isn't.
 
 ## Install
 
@@ -138,4 +140,5 @@ Sources/FastDebatePaste/
   WindowTargeting.swift       AX-based window list + activation
   TextProcessor.swift         equation-omission + line-break rules
   PasteActions.swift          the copy → process → paste engine
+legacy/                       the original Windows AutoHotkey version
 ```
